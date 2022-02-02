@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import user_image from "../../assets/images/nhan.jpg";
 
 import user_menu from "../../assets/JsonData/user_menus.json";
+import ThemeMenu from "../thememenu/ThemeMenu";
 
 const curr_user = {
   display_name: "Nhan Dang",
@@ -64,7 +65,9 @@ const Topnav = () => {
             renderFooter={() => <Link to="/">View all</Link>}
           />
         </div>
-        <div className="topnav__right-item"></div>
+        <div className="topnav__right-item">
+          <ThemeMenu />
+        </div>
       </div>
     </div>
   );

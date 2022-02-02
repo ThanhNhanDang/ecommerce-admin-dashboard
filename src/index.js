@@ -1,19 +1,26 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import reportWebVitals from "./reportWebVitals";
 
-import './assets/boxicons-2.1.1/css/boxicons.min.css'
-import './assets/css/grid.css'
-import './assets/css/index.css'
-import Layout from './components/layout/Layout';
+import "./assets/boxicons-2.1.1/css/boxicons.min.css";
+import "./assets/css/grid.css";
+import "./assets/css/theme.css";
+import "./assets/css/index.css";
+import Layout from "./components/layout/Layout";
+import { createStore } from "redux";
+import rootReducer from "./redux/reducers";
+import { Provider } from "react-redux";
+const store = createStore(rootReducer);
 
-document.title = "Ecommerce admin dashboard"
+document.title = "Ecommerce admin dashboard";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Layout />
-  </React.StrictMode>,
-  document.getElementById('root')
+  <Provider store={store}>
+    <React.StrictMode>
+      <Layout />
+    </React.StrictMode>
+  </Provider>,
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function
