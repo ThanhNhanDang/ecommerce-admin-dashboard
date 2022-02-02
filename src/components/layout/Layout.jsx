@@ -16,7 +16,7 @@ const Layout = () => {
             <Sidebar {...props} />
             <div className="layout__content">
               <Topnav />
-              <div className="layout__content__main">
+              <div className="layout__content-main">
                 <Routes />
               </div>
             </div>
